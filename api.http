@@ -1,0 +1,58 @@
+###
+GET http://localhost:3000/task
+
+###
+GET http://localhost:3000/task/64ff8764e554585187fc1151
+
+###
+GET http://localhost:3000/task/today?day=sun
+
+
+###
+POST http://localhost:3000/task
+Content-Type: application/json
+
+{
+    "description": "teste description",
+    "currentTime": 6000,
+    "start": "1111-11-11T11:11:11.111Z",
+    "status": "completed",
+    "totalTime": 6000,
+    "type": "timer",
+    "days": {
+    "sun": true,
+    "mon": false,
+    "tue": true,
+    "wed": true,
+    "thu": true,
+    "fri": true,
+    "sat": true
+    }
+}
+
+
+###
+DELETE http://localhost:3000/task/64ff6e37372b3e09a0301f36
+
+
+###
+PATCH http://localhost:3000/task/64ff455bd5316480ef2020b5
+Content-Type: application/json
+
+{
+    "description": "teste description",
+    "currentTime": 6000,
+    "start": "1111-11-11T11:11:11.111Z",
+    "status": "completed",
+    "totalTime": 8000,
+    "type": "timer",
+    "days": {
+    "sun": true,
+    "mon": true,
+    "tue": true,
+    "wed": true,
+    "thu": true,
+    "fri": true,
+    "sat": true
+    }
+}

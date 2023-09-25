@@ -1,0 +1,37 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+
+model task {
+  id  String @db.ObjectId @id @default(auto()) @map("_id")
+  description String 
+  type String
+  totalTime Int
+  currentTime Int
+  status String
+  start DateTime
+  finish DateTime? @default("9999-11-11T11:11:11.111Z")
+  days Days
+  createdAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+}
+
+type Days {
+  sun Boolean
+  mon Boolean
+  tue Boolean
+  wed Boolean
+  thu Boolean
+  fri Boolean
+  sat Boolean
+}
+
