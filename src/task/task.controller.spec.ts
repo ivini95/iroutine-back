@@ -19,6 +19,7 @@ interface Task {
     fri: boolean;
     sat: boolean;
   };
+  userId: string;
 }
 
 const fakeTasks: Task[] = [
@@ -39,6 +40,7 @@ const fakeTasks: Task[] = [
       fri: true,
       sat: true,
     },
+    userId: 'userid1234',
   },
 ];
 

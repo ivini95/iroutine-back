@@ -20,6 +20,9 @@ export class CreateTaskDto {
   finish?: string;
   @IsNotEmpty()
   days: Day;
+  @IsNotEmpty()
+  @IsString()
+  userId: string;
 }
 
 type Day = {

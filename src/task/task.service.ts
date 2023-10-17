@@ -18,6 +18,7 @@ export class TaskService {
         status: createTaskDto.status,
         totalTime: createTaskDto.totalTime,
         type: createTaskDto.type,
+        userId: createTaskDto.userId,
       },
     });
   }
