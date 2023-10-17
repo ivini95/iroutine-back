@@ -1,5 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
   provider = "prisma-client-js"
@@ -10,8 +8,15 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id  String @db.ObjectId @id @default(auto()) @map("_id")
+  name String
+  password String
+  tasks Task[]
+}
 
-model task {
+
+model Task {
   id  String @db.ObjectId @id @default(auto()) @map("_id")
   description String 
   type String
@@ -23,6 +28,8 @@ model task {
   days Days
   createdAt DateTime @default(now())
   updateAt DateTime @updatedAt
+  userId String @db.ObjectId
+  user User @relation(fields: [userId], references: [id])
 }
 
 type Days {
