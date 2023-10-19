@@ -53,10 +53,10 @@ describe('TaskService', () => {
           provide: TaskService,
           useValue: {
             create: jest.fn().mockReturnValue(fakeTasks[0]),
-            findToday: jest.fn().mockReturnValue(fakeTasks[0]),
+            findToday: jest.fn().mockResolvedValue(fakeTasks[0]),
             findAll: jest.fn().mockReturnValue(fakeTasks),
-            findOne: jest.fn().mockReturnValue(fakeTasks[0]),
-            update: jest.fn().mockReturnValue(fakeTasks[0]),
+            findOne: jest.fn().mockResolvedValue(fakeTasks[0]),
+            update: jest.fn().mockResolvedValue(fakeTasks[0]),
             remove: jest.fn().mockReturnValue(fakeTasks[0]),
           },
         },
