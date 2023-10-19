@@ -17,18 +17,34 @@ export class UsersService {
   }
 
   findAll() {
-    return `This action returns all users`;
+    return this.prismaService.user.findMany();
   }
 
   findOne(id: string) {
-    return `This action returns a #${id} user`;
+    return this.prismaService.user.findUniqueOrThrow({
+      where: {
+        id,
+      },
+    });
   }
 
   update(id: string, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+    return this.prismaService.user.update({
+      where: {
+        id,
+      },
+      data: {
+        name: updateUserDto.name,
+        password: updateUserDto.password,
+      },
+    });
   }
 
   remove(id: string) {
-    return `This action removes a #${id} user`;
+    return this.prismaService.user.delete({
+      where: {
+        id,
+      },
+    });
   }
 }
