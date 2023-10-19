@@ -85,7 +85,7 @@ describe('TaskController', () => {
 
   describe('findAll', () => {
     it('should return all tasks', async () => {
-      const response = await taskController.findAll();
+      const response = await taskController.findAll(fakeTasks[0]);
 
       expect(response).toEqual(fakeTasks);
     });

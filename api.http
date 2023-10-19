@@ -1,11 +1,12 @@
 ###
-GET http://localhost:3000/task
+GET http://localhost:3000/task/653178f7bf3ac8415a2df2f6
+
 
 ###
-GET http://localhost:3000/task/64ff8764e554585187fc1151
+GET http://localhost:3000/task/task?taskId=65319151a5683ab28c86263e
 
 ###
-GET http://localhost:3000/task/today?day=sun
+GET http://localhost:3000/task/today?day=tue
 
 
 ###
@@ -27,7 +28,8 @@ Content-Type: application/json
     "thu": true,
     "fri": true,
     "sat": true
-    }
+    },
+    "userId": "653178f7bf3ac8415a2df2f6"
 }
 
 

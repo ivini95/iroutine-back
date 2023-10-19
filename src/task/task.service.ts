@@ -23,14 +23,18 @@ export class TaskService {
     });
   }
 
-  findAll() {
-    return this.prismaService.task.findMany();
+  findAll(userId: string) {
+    return this.prismaService.task.findMany({
+      where: {
+        userId,
+      },
+    });
   }
 
-  findOne(id: string) {
+  findOne(taskId: string) {
     return this.prismaService.task.findUniqueOrThrow({
       where: {
-        id,
+        id: taskId,
       },
     });
   }

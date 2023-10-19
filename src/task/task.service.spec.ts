@@ -80,7 +80,7 @@ describe('TaskService', () => {
 
   describe('find all tasks', () => {
     it('should be return all tasks', () => {
-      const response = taskService.findAll();
+      const response = taskService.findAll(fakeTasks[0].userId);
 
       expect(response).toEqual(fakeTasks);
     });
