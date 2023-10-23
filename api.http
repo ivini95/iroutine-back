@@ -80,7 +80,7 @@ Content-Type: application/json
 
 
 ###
-DELETE http://localhost:3000/users/6532f5022a102e71b2fc6f0a
+DELETE http://localhost:3000/users/6532f4a92a102e71b2fc6f08
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTMyZjU0ZTYzOWI2ZWExYjAwNjJlMTgiLCJpYXQiOjE2OTgwODEyNzksImV4cCI6MTY5ODE2NzY3OX0.HMwmA_vWpE_9XCKuCs8XWFepyeKIvn-ag323cQjq-bA
 ###
 PATCH http://localhost:3000/users/6532f54e639b6ea1b0062e18
