@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { UpdateTaskDto } from './dto/update-task.dto';
 import { PrismaService } from '../prisma/prisma/prisma.service';
@@ -7,7 +7,17 @@ import { PrismaService } from '../prisma/prisma/prisma.service';
 export class TaskService {
   constructor(private prismaService: PrismaService) {}
 
-  create(createTaskDto: CreateTaskDto) {
+  async create(createTaskDto: CreateTaskDto) {
+    const userNameExist = await this.prismaService.user.findUnique({
+      where: {
+        id: createTaskDto.userId,
+      },
+    });
+
+    if (!userNameExist) {
+      throw new NotFoundException(`UserId don't exist`);
+    }
+
     return this.prismaService.task.create({
       data: {
         description: createTaskDto.description,
@@ -23,7 +33,17 @@ export class TaskService {
     });
   }
 
-  findAll(userId: string) {
+  async findAll(userId: string) {
+    const userNameExist = await this.prismaService.user.findUnique({
+      where: {
+        id: userId,
+      },
+    });
+
+    if (!userNameExist) {
+      throw new NotFoundException(`UserId don't exist`);
+    }
+
     return this.prismaService.task.findMany({
       where: {
         userId,
@@ -39,8 +59,16 @@ export class TaskService {
     });
   }
 
-  async findToday(day: string) {
-    const allTask = await this.prismaService.task.findMany();
+  async findToday(userId: string, day: string) {
+    const allTask = await this.prismaService.task.findMany({
+      where: {
+        userId,
+      },
+    });
+    if (allTask.length <= 0) {
+      throw new NotFoundException('User do not have any tasks');
+    }
+
     const taskToday = {};
 
     allTask.map((task, i) => {

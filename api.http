@@ -1,12 +1,12 @@
 ###
-GET http://localhost:3000/task/653178f7bf3ac8415a2df2f6
+GET http://localhost:3000/task/6532f4a92a102e71b2fc6f08
 
 
 ###
 GET http://localhost:3000/task/task?taskId=65319151a5683ab28c86263e
 
 ###
-GET http://localhost:3000/task/today?day=tue
+GET http://localhost:3000/task/today/6532f4a92a102e71b2fc6f09?day=tue
 
 
 ###
@@ -29,12 +29,12 @@ Content-Type: application/json
     "fri": true,
     "sat": true
     },
-    "userId": "653178f7bf3ac8415a2df2f6"
+    "userId": "6532f4a92a102e71b2fc6f08"
 }
 
 
 ###
-DELETE http://localhost:3000/task/64ff6e37372b3e09a0301f36
+DELETE http://localhost:3000/task/65319151a5683ab28c86263e
 
 
 ###
@@ -62,30 +62,41 @@ Content-Type: application/json
 //---------------------USER
 
 ###
-GET http://localhost:3000/users/
+GET http://localhost:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTMyZjU0ZTYzOWI2ZWExYjAwNjJlMTgiLCJpYXQiOjE2OTc4Mzg0NDIsImV4cCI6MTY5NzkyNDg0Mn0.p3TG5LL8P-IrIFpUW4_hLzf1Rbs-m64sIZAWTqiSOaw
 
 ###
-GET http://localhost:3000/users/653178568711b6e8b2e9d8c8
-
+GET http://localhost:3000/users/653178f7bf3ac8415a2df2f6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTMxNzhmN2JmM2FjODQxNWEyZGYyZjYiLCJpYXQiOjE2OTc3NzA0MzksImV4cCI6MTY5Nzg1NjgzOX0.0DHx2IRUex1SWJYY-hKh2wlGNLtJ4_NiaYPAIrnM8o4
 
 ###
 POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-    "name": "nameTest",
+    "name": "name3Test",
     "password": "2312412"
 }
 
 
 ###
-DELETE http://localhost:3000/users/653178568711b6e8b2e9d8c8
-
-
+DELETE http://localhost:3000/users/653178f7bf3ac8415a2df2f6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTMxNzhmN2JmM2FjODQxNWEyZGYyZjYiLCJpYXQiOjE2OTc3NzA0MzksImV4cCI6MTY5Nzg1NjgzOX0.0DHx2IRUex1SWJYY-hKh2wlGNLtJ4_NiaYPAIrnM8o4
 ###
 PATCH http://localhost:3000/users/653178f7bf3ac8415a2df2f6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTMxNzhmN2JmM2FjODQxNWEyZGYyZjYiLCJpYXQiOjE2OTc3NzA0MzksImV4cCI6MTY5Nzg1NjgzOX0.0DHx2IRUex1SWJYY-hKh2wlGNLtJ4_NiaYPAIrnM8o4
 Content-Type: application/json
 
 {
     "name": "edit2nameTest"
+}
+
+//--------------------login
+###
+POST  http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "name": "name2Test",
+    "password": "2312412"
 }

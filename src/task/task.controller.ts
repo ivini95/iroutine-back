@@ -22,9 +22,9 @@ export class TaskController {
     return this.taskService.create(createTaskDto);
   }
 
-  @Get('today')
-  findToday(@Query('day') day: string) {
-    return this.taskService.findToday(day);
+  @Get('today/:id')
+  findToday(@Param('id') userId: string, @Query('day') day: string) {
+    return this.taskService.findToday(userId, day);
   }
 
   @Get(':id')
