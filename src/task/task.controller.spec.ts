@@ -85,7 +85,7 @@ describe('TaskController', () => {
 
   describe('findAll', () => {
     it('should return all tasks', async () => {
-      const response = await taskController.findAll(fakeTasks[0]);
+      const response = await taskController.findAll(fakeTasks[0].userId);
 
       expect(response).toEqual(fakeTasks);
     });
@@ -103,7 +103,7 @@ describe('TaskController', () => {
   describe('findToday', () => {
     it('should return task with day parm equal true', async () => {
       const day = 'fri';
-      const response = await taskController.findToday(day);
+      const response = await taskController.findToday(fakeTasks[0].userId, day);
 
       expect(response).toEqual(fakeTasks[0]);
     });

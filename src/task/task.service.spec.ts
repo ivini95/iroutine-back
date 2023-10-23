@@ -98,7 +98,7 @@ describe('TaskService', () => {
   describe('findToday', () => {
     it('should return task with day parm equal true', async () => {
       const day = 'fri';
-      const response = await taskService.findToday(day);
+      const response = await taskService.findToday(fakeTasks[0].userId, day);
 
       expect(response).toEqual(fakeTasks[0]);
     });
