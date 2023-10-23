@@ -3,10 +3,10 @@ GET http://localhost:3000/task/6532f4a92a102e71b2fc6f08
 
 
 ###
-GET http://localhost:3000/task/task?taskId=65319151a5683ab28c86263e
+GET http://localhost:3000/task/task?taskId=6532f8d2c214cbae7efe85af
 
 ###
-GET http://localhost:3000/task/today/6532f4a92a102e71b2fc6f09?day=tue
+GET http://localhost:3000/task/today/6532f4a92a102e71b2fc6f08?day=tue
 
 
 ###
@@ -63,11 +63,11 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTMyZjU0ZTYzOWI2ZWExYjAwNjJlMTgiLCJpYXQiOjE2OTc4Mzg0NDIsImV4cCI6MTY5NzkyNDg0Mn0.p3TG5LL8P-IrIFpUW4_hLzf1Rbs-m64sIZAWTqiSOaw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTMyZjU0ZTYzOWI2ZWExYjAwNjJlMTgiLCJpYXQiOjE2OTgwODEyNzksImV4cCI6MTY5ODE2NzY3OX0.HMwmA_vWpE_9XCKuCs8XWFepyeKIvn-ag323cQjq-bA
 
 ###
-GET http://localhost:3000/users/653178f7bf3ac8415a2df2f6
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTMxNzhmN2JmM2FjODQxNWEyZGYyZjYiLCJpYXQiOjE2OTc3NzA0MzksImV4cCI6MTY5Nzg1NjgzOX0.0DHx2IRUex1SWJYY-hKh2wlGNLtJ4_NiaYPAIrnM8o4
+GET http://localhost:3000/users/6532f54e639b6ea1b0062e18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTMyZjU0ZTYzOWI2ZWExYjAwNjJlMTgiLCJpYXQiOjE2OTgwODEyNzksImV4cCI6MTY5ODE2NzY3OX0.HMwmA_vWpE_9XCKuCs8XWFepyeKIvn-ag323cQjq-bA
 
 ###
 POST http://localhost:3000/users
@@ -80,15 +80,15 @@ Content-Type: application/json
 
 
 ###
-DELETE http://localhost:3000/users/653178f7bf3ac8415a2df2f6
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTMxNzhmN2JmM2FjODQxNWEyZGYyZjYiLCJpYXQiOjE2OTc3NzA0MzksImV4cCI6MTY5Nzg1NjgzOX0.0DHx2IRUex1SWJYY-hKh2wlGNLtJ4_NiaYPAIrnM8o4
+DELETE http://localhost:3000/users/6532f5022a102e71b2fc6f0a
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTMyZjU0ZTYzOWI2ZWExYjAwNjJlMTgiLCJpYXQiOjE2OTgwODEyNzksImV4cCI6MTY5ODE2NzY3OX0.HMwmA_vWpE_9XCKuCs8XWFepyeKIvn-ag323cQjq-bA
 ###
-PATCH http://localhost:3000/users/653178f7bf3ac8415a2df2f6
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTMxNzhmN2JmM2FjODQxNWEyZGYyZjYiLCJpYXQiOjE2OTc3NzA0MzksImV4cCI6MTY5Nzg1NjgzOX0.0DHx2IRUex1SWJYY-hKh2wlGNLtJ4_NiaYPAIrnM8o4
+PATCH http://localhost:3000/users/6532f54e639b6ea1b0062e18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTMyZjU0ZTYzOWI2ZWExYjAwNjJlMTgiLCJpYXQiOjE2OTgwODEyNzksImV4cCI6MTY5ODE2NzY3OX0.HMwmA_vWpE_9XCKuCs8XWFepyeKIvn-ag323cQjq-bA
 Content-Type: application/json
 
 {
-    "name": "edit2nameTest"
+    "name": "nameTestEdit"
 }
 
 //--------------------login

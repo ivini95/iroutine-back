@@ -38,14 +38,23 @@ export class UsersService {
     });
   }
 
-  update(id: string, updateUserDto: UpdateUserDto) {
+  async update(id: string, updateUserDto: UpdateUserDto) {
+    const userNameExist = await this.prismaService.user.findUnique({
+      where: {
+        name: updateUserDto.name,
+      },
+    });
+
+    if (userNameExist) {
+      throw new NotFoundException(`User ${updateUserDto.name} alredy exist`);
+    }
+
     return this.prismaService.user.update({
       where: {
         id,
       },
       data: {
         name: updateUserDto.name,
-        password: updateUserDto.password,
       },
     });
   }
