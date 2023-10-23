@@ -27,14 +27,14 @@ export class TaskController {
     return this.taskService.findToday(userId, day);
   }
 
-  @Get(':id')
-  findAll(@Param('id') userId: string) {
-    return this.taskService.findAll(userId);
-  }
-
   @Get('task')
   findOne(@Query('taskId') taskId: string) {
     return this.taskService.findOne(taskId);
+  }
+
+  @Get(':id')
+  findAll(@Param('id') userId: string) {
+    return this.taskService.findAll(userId);
   }
 
   @Patch(':id')

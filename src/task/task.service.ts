@@ -60,6 +60,8 @@ export class TaskService {
   }
 
   async findToday(userId: string, day: string) {
+    console.log('aqui');
+
     const allTask = await this.prismaService.task.findMany({
       where: {
         userId,
